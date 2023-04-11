@@ -3,27 +3,18 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex);
 
-import ments from './data/award'
 import locations from './data/locations'
 
 export default new Vuex.Store({
   state: {
-    ments,
     curTab: "new",
-    inv: {},
-    loc: { name: '', art: '', text: '', dir: {} },
+    loc: { name: '', art: '', text: '', dir: {}, cipher: false },
     key: "",
     messages: []
   },
   mutations: {
     addMsg: (state, msg) => { state.messages.push(msg) }
     , delMsg: (state, idx) => { state.messages.splice(idx, 1); }
-    , addItem: (state, item) => {
-      if (!state.inv[item]) {
-        state.inv[item] = 0;
-      }
-      state.inv[item].push(item);
-    }
     , setTab: (state, tab) => {
       state.curTab = tab;
     }
@@ -32,49 +23,73 @@ export default new Vuex.Store({
       var key = locKey.key;
       // Simple deep copy instead of reference
       var tmpLoc = JSON.parse(JSON.stringify(locations[loc]));
-      tmpLoc.text = vigenere(tmpLoc.text, key);
+      if (tmpLoc.cipher)
+        tmpLoc.text = vigenere(tmpLoc.text, key);
       state.loc = tmpLoc;
     }
-    , unlock: (state, item) => {
-      switch (item) {
-      }
-    }
-    , award: (state, item) => {
-      if (state.ments.hasOwnProperty(item)) {
-        state.ments[item].unlock = true;
-      }
-    },
   },
   actions: {
     addMsg: ({ commit }, msg) => { commit('addMsg', msg) }
     , delMsg: ({ commit }, msg) => { commit('delMsg', msg) }
-    , unlock: ({ commit }, item) => { commit('unlock', item) }
-    , award: ({ commit }, item) => {
-      if (ments[item].unlock === false)
-        commit('addMsg', `Award: ${ments[item].name}`);
-      commit('award', item);
-    }
     , setTab: ({ commit }, tab) => { commit('setTab', tab) }
     , setLoc: ({ commit }, locKey) => { commit('setLoc', locKey) }
   },
   getters: {
-    awards: () => { return Object.values(ments).filter(award => award.unlock === true) }
-    , ttlAwards: () => { return Object.keys(ments).length }
+    //awards: () => { return Object.values(ments).filter(award => award.unlock === true) }
+    //, ttlAwards: () => { return Object.keys(ments).length }
   }
 })
 
-function ordA(a) {
-  return a.charCodeAt(0) - 65;
-}
+// credit: https://www.nayuki.io/page/vigenere-cipher-javascript
 function vigenere(text, key) {
   if (key == null || key == "") {
     return text;
   }
 
-  var i = 0, b;
-  key = key.toUpperCase().replace(/[^A-Z]/g, '');
-  return text.toUpperCase().replace(/[A-Z]/g, function (a) {
-    b = key[i++ % key.length];
-    return String.fromCharCode(((ordA(a) + (26 - ordA(b))) % 26 + 65));
-  });
+  let keyArray = filterKey(key);
+  if (keyArray.length == 0) {
+    alert("Key has no letters");
+    return;
+  }
+
+  for (let i = 0; i < keyArray.length; i++)
+    keyArray[i] = (26 - keyArray[i]) % 26;
+
+  return crypt(text, keyArray);
+}
+
+function crypt(input, key) {
+  let output = "";
+  let j = 0;
+  for (const ch of input) {
+    const cc = ch.codePointAt(0);
+    if (isUppercase(cc)) {
+      output += String.fromCodePoint((cc - 65 + key[j % key.length]) % 26 + 65);
+      j++;
+    } else if (isLowercase(cc)) {
+      output += String.fromCodePoint((cc - 97 + key[j % key.length]) % 26 + 97);
+      j++;
+    } else {
+      output += ch;
+    }
+  }
+  return output.replace(/\\n/g, '\n');
+}
+function filterKey(key) {
+  let result = [];
+  for (const ch of key) {
+    const cc = ch.codePointAt(0);
+    if (isLetter(cc))
+      result.push((cc - 65) % 32);
+  }
+  return result;
+}
+function isLetter(c) {
+  return isUppercase(c) || isLowercase(c);
+}
+function isUppercase(c) {
+  return 65 <= c && c <= 90;  // 65 is character code for 'A'. 90 is 'Z'.
+}
+function isLowercase(c) {
+  return 97 <= c && c <= 122;  // 97 is character code for 'a'. 122 is 'z'.
 }

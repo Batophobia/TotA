@@ -9,7 +9,7 @@
           the long lost Temple of the Albatross. After a long journey, you are
           dropped off on the beach, near where you believe the temple to be.
         </div>
-        <div>
+        <div style="margin-top: 25px">
           <button @click="startGame()">START</button>
         </div>
       </div>
@@ -32,7 +32,7 @@ export default {
     ...mapActions(["setTab", "setLoc"]),
     startGame() {
       this.setTab("quest");
-      this.setLoc({ loc: "town", key: "" });
+      this.setLoc({ loc: "start", key: "" });
     },
   },
   computed: {
@@ -60,5 +60,6 @@ body {
   right: 0;
   overflow: auto;
   text-align: center;
+  padding: 30px;
 }
 </style>

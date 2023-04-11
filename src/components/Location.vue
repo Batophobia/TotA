@@ -3,6 +3,16 @@
     <h2 id="locName">{{ loc.name }}</h2>
     <div id="locArt">{{ loc.art }}</div>
     <div id="locText">{{ loc.text }}</div>
+    <div v-if="loc.dir.extra" id="extraButtons">
+      <button
+        :key="l.action"
+        v-for="l in loc.dir.extra"
+        class="extraBtn"
+        @click="moveExtra(l.loc)"
+      >
+        {{ l.action.toUpperCase() }}
+      </button>
+    </div>
     <div id="dirButtons">
       <button id="wBtn" v-if="loc.dir.west" @click="moveDir('w')">W</button>
       <button id="nBtn" v-if="loc.dir.north" @click="moveDir('n')">N</button>
@@ -44,15 +54,33 @@ export default {
           break;
       }
     },
+    moveExtra(loc) {
+      this.setLoc({ loc, key: this.txtKey });
+    },
   },
 };
 </script>
 
 <style>
+#locText {
+  white-space: pre-wrap;
+}
+
 #dirButtons {
   position: relative;
   margin-top: 25px;
   left: 500px;
+}
+
+#extraButtons {
+  position: relative;
+  width: 75px;
+  left: 150px;
+}
+
+#extraButtons button {
+  position: absolute;
+  margin-top: 39px;
 }
 
 #dirButtons button {

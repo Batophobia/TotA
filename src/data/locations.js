@@ -1,12 +1,52 @@
 export default {
-  town: { name: "Ruklo Town", dir: { east: "riverB" }, text: "THIS IS THE TOWN YOU STARTED IN.  THERE'S NOTHING LEFT TO HELP YOU ON OUR JOURNEY HERE." },
-  riverT: { name: "Eddied Stream", dir: { south: "riverB" }, text: "AS YOU WALK UP TO THE BABBLING WATERS OF THE RIVER, YOU NOTICE A BEAR IN THE DISTANCE.  SEEMINGLY, IT'S DECIDED TO NEGLECT YOUR INTRUSION.  YOU PROBABLY COULD TURN AROUND WITHOUT CAUSING AN ISSUE." },
-  riverB: { name: "Dark River", dir: { north: "riverT", south: "bridge", west: "town" }, text: "THE BREATHTAKING VIEW OF A WIDE RIVER GREETS YOU, THE SUNLIGHT SPARKLING OFF THE WATER.  SOME BIRDS ARE SINGING NEARBY AS YOU WATCH THE FISH SWIMMING IN THE DEEP WATERS." },
-  bridge: { name: "Highland Bridge", dir: { north: "riverB", east: "plains" }, text: "YOU WALK UP TO A BRIDGE THAT CROSSES THE RIVER.  AS YOU BEGIN TO CROSS THE BRIDGE, A TROLL POPS OUT.  \"19 55 73 91 121\", IT SAYS.  \"WHAT ARE YOU TALKING ABOUT?\" YOU ASK. \"19 55 73 91 121\", IT REPEATS." },
-  plains: { name: "Expansive Plain", dir: { north: "forestBL", west: "bridge", }, text: "BV NRQIMZOGU QA G QPBGGUF QABWUMF ECV QA. \"RW JA VT HIM GUD MMSZ, P UWC XWHPG, IZ CWGZCN TRLH, BVQ Q WO BUK AJLQRS. CCG NCX ERXS BTY ZVF ZRYH JV GNSSM!\" UK'G QWVTHJVT GH B 3 JL 3 MFJL, JOGQMEOBH BB NWNARRT \"UPR QSZ QF IZPKXCWTM, EOUIB QUKO...\"" },
-  forestTL: { name: "Rounded Wood", dir: { south: "forestBL", east: "forestTR" }, text: "AMG CJHCKJF HJBS PX RZKHAHYGO WL P SZOMZEYHHM CZFIPSI ZI N UHQNPI GGLJ. JTN NM OFPOGR WHX VSZ APTJ PZF RCNWCGZQ XU NV. YJX HAFTPN NI FTW L WVI HSF DVLH, \"YNISO SDY NU C.\"" },
-  forestTR: { name: "Inner Forest", dir: { south: "forestBR", west: "forestTL", east: "mountain" }, text: "KJGA DA IOJ KYIRG MTTPNG, NVZ UEPZQSJ WAJA P ZRCWG CDUI.  CY JYS DTOLI GTSQU JJH WLW PLHR XZ NOL VAS VKHPMF P ZJCE.  VF NVZ IPO HE AT NPVIT, ZMG VDASSD UFBTTZYU \"OJJC MTT TN Q.\"" },
-  forestBL: { name: "Red Forest", dir: { south: "plains", north: "forestTL", east: "forestBR" }, text: "HY VSZ RCAWCYXR IV YJP ABGLXV, JJH PYJ OPO ON HS QWY ZPU BKEC N CHRGEVT IOFV CZNSZ JF.  PY UTSUHFGYN VKHPMF IOJ COQVRL, \"ZR QJE XZ Z.\"" },
-  forestBR: { name: "Nice Cabin", dir: { north: "forestTR", west: "forestBL" }, text: "ZYWXWYXUL KYOB P ZRCWG PALFTTIT, NVZ PZOVRL F ELWVC.  AMG XVVAITZ CZNSZ T.E.  LIQ IOJTP DF P ZNIY JITY YJP YBDY YJLO ETHIU \"WZSI MTT TN Y.\"" },
-  mountain: { name: "Grencidep Mountain", dir: { west: "forestTR" }, text: "CH IUZEE FG A UUPH DCV CFUTAHA UXTED FG SGGY DQNZPEU CAPCOLKREZPN.  AHMLGP, RWC BLGHA WKP NLCM, AJY 23 LRWEVO WSAEYM ZLEY L EVMTYL LQ PRNY.  UHW HOPEPID, WSOE FYIW EF CZHHL, ULH: 7 4 13 0 20 6 21 15 13 13 0 4 10 23 10 1 8 24 3 17 12 19 0" },
+  start: {
+    name: "LANDING SITE",
+    dir: { north: "forestA", east: "beachB", west: "beachD" },
+    text: "Once on shore, you are greeted by the warm sun and sound of waves crashing against the rocky shore.  You open your eyes and look around. The beach is deserted, save for a few seagulls flying overhead.  To the East, you can see a lighthouse, to the North there is the edge of the forest, and to the West there appears to be some debris on the beach."
+  },
+  beachB: {
+    name: "OLD LIGHTHOUSE",
+    dir: { west: "start", extra: [{ action: "climb", loc: "beachC" }] },
+    text: "The lighthouse is a tall, white structure with a red roof, the sound of the waves crashing against the rocks below.  Next to the door, you notice a keypad awaiting a 3-letter code to open the door."
+  },
+  beachC: {
+    name: "LANTERN ROOM",
+    dir: { extra: [{ action: "descend", loc: "beachB" }] },
+    cipher: true,
+    text: "Nkou mhm mox hf bae tbgpmhwnsm, roc aadx a jxacminnl dbee hf bae wveig. Ywn cig smx fwk mqeea bn moezr dqkekmiwg.  Ywn nwmikx tpx lifp ql spttbxrmw.  Abmakael mo wge wy tpx wqgdwps, ghu nbnl t nwme baab keiws:\\v\\gTPX LQZHB YRWF TPBS PHUAX WIL MG LOTX FZBEVW IV MHM EOVZ, DIKK VBGPMS.\\vGOE MHIM IBL KMR FMTTCKE QL GWGE, Q TM TXFB PIBA JCLT BAE ETVML.\\nBAE AHUVW ON MHMF CWGSBTNBEY KKAAAIVZ IV MHM WAZDNMLS QL MIWDMGIVZ.\\nQY YWN FQGD BAIA GOBX, PTXAAX KVHW BAAB B NMOEZ FEIGT NHR BAIA MO PTPXXN."
+  },
+  beachD: {
+    name: "SHIPWRECK",
+    dir: { east: "start" },
+    text: "As you approach the large, dark shape, half-buried in the sand, yo recognize it as an old ship that crashed ashore.  It's clear that it's been there for a long time, the wood is weathered and bleached by the sun and the sails torn and tattered.  You examine the wreckage and notice there is something carved into the wood: ITA"
+  },
+  forestA: {
+    name: "EDGE OF THE FOREST",
+    dir: { south: "start", north: "forestB", west: "forestC" },
+    text: "As you come to the edge of the forest, you are greeted by the sound of birdsong and the rustle of leaves in the wind.  The forest is dense and dark, and you cannot see very far in any direction.  As you are examining the area, you notice 4 piles of rocks around a tree with what looks like a compass caved into it.  The number of rocks in each pile are: 11, 4, 10, 6"
+  },
+  forestB: {
+    name: "SPARKLING LAKE",
+    dir: { south: "forestA", extra: [{ action: "play", loc: "templeA" }] },
+    cipher: true,
+    text: "Llpkarv elrgyvs xhw jdcisl, cdf goei iz e cdipcmny.  Mc ele emsope gj isi cdipcmny mh l pajkt wekw, xwp aalig l fesyitjud fafi cgpdc.  Es qsj helc eazre llt dlojiatre, qsj ystagt dsmwxwtrg kxxnoifk dfx ox xwp wafh.  Stkgarv tx uh, mi ltpwegd xo ti p mvauiapx msht zj a vegv qelea, dqogxw lrd usdw xo llt esuul.  Teghwh pcsufh isi mwxpw erw ppcke tmgow afh bfwiu rdeis.  Ar isi cwripv ik e hxeld, vdfrd kxdyi, shegvpifk qcmgzx gph if xwp wufpxrlt."
+  },
+  forestC: {
+    name: "MASSIVE TREE",
+    dir: { east: "forestA", extra: [{ action: "enter", loc: "forestD" }] },
+    cipher: true,
+    text: "Nzy cgqt es a eehdmvw xgpi if xwp jojihe, wo tmv elal cdf gaf'x hpi tzi izt ox mi.  Helcmcr ergyco xhw qpdwini icync, cdf rolmrp e seeaw hogvllc, bsvtwc lsvvp ingyvs xo kujpizw xwcsuyl.  Pcsufh isi dgsghey svt ppatsglxe ueggmnyw sptiuxxyk szmed sn llt hetwv, pyh bavsd jlqmcr svwvwped.  Llt deidsgd ephipc xo ti rppetvpemny, talcifk bfwiu axel tzixc waaph qyld su hmnv."
+  },
+  forestD: {
+    name: "TREE HOUSE",
+    dir: { extra: [{ action: "exit", loc: "forestC" }] },
+    cipher: true,
+    text: "Tyxejmcr xhw xgpi, ygy utrd qsjcwedj xy e smvecmsarvwc shertsuk egpe.  Tzi llplk egp tauoto aill rzpojjjw jlmxtd env wicmnyis trslvjxinlw.  Isi psmceid xpdzv ik e htkhl xd mihgps, oipagitrg s ppvi waxw hevww pyh ratewis llpe pogo atoe lltj gomps xsvw ei lry esbprt.  Ar isi cwripv ik e slvk, kxdyi pwhtdxad, wtpqifk iz viki ja sul su ele oeipv.  Of xwp wivi dq xhw ttoislea tw a hppbye llpe veshh:\\y\\rA TMGO SF LLT DIA, OMIS AIFKH LW WAHT LW TZI HVC.\\nS VDZWT, GRAJ ECUIHDMBDI QJ TLSCXYK TZI HLGRWH XYWTJYBPRT.\\fMI'D GODSG, DS BJMAWMAFX, XE'W FGVB DS MSVKPPOMW."
+  },
+  templeA: {
+    name: "TEMPLE ENTRANCE",
+    dir: { south: "forestB" },
+    cipher: true,
+    text: "You enter the temple"
+  },
 }
