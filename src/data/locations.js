@@ -13,6 +13,7 @@ export default {
     name: "LANTERN ROOM",
     dir: { extra: [{ action: "descend", loc: "beachB" }] },
     cipher: true,
+    check: 'jxakac',
     text: "Nkou mhm mox hf bae tbgpmhwnsm, roc aadx a jxacminnl dbee hf bae wveig. Ywn cig smx fwk mqeea bn moezr dqkekmiwg.  Ywn nwmikx tpx lifp ql spttbxrmw.  Abmakael mo wge wy tpx wqgdwps, ghu nbnl t nwme baab keiws:\\v\\gTPX LQZHB YRWF TPBS PHUAX WIL MG LOTX FZBEVW IV MHM EOVZ, DIKK VBGPMS.\\vGOE MHIM IBL KMR FMTTCKE QL GWGE, Q TM TXFB PIBA JCLT BAE ETVML.\\nBAE AHUVW ON MHMF CWGSBTNBEY KKAAAIVZ IV MHM WAZDNMLS QL MIWDMGIVZ.\\nQY YWN FQGD BAIA GOBX, PTXAAX KVHW BAAB B NMOEZ FEIGT NHR BAIA MO PTPXXN."
   },
   beachD: {
@@ -27,26 +28,38 @@ export default {
   },
   forestB: {
     name: "SPARKLING LAKE",
-    dir: { south: "forestA", extra: [{ action: "play", loc: "templeA" }] },
+    dir: { south: "forestA", extra: [{ action: "play", loc: "templeA", item: "rf" }] },
     cipher: true,
+    check: 'uzvekxq',
     text: "Llpkarv elrgyvs xhw jdcisl, cdf goei iz e cdipcmny.  Mc ele emsope gj isi cdipcmny mh l pajkt wekw, xwp aalig l fesyitjud fafi cgpdc.  Es qsj helc eazre llt dlojiatre, qsj ystagt dsmwxwtrg kxxnoifk dfx ox xwp wafh.  Stkgarv tx uh, mi ltpwegd xo ti p mvauiapx msht zj a vegv qelea, dqogxw lrd usdw xo llt esuul.  Teghwh pcsufh isi mwxpw erw ppcke tmgow afh bfwiu rdeis.  Ar isi cwripv ik e hxeld, vdfrd kxdyi, shegvpifk qcmgzx gph if xwp wufpxrlt."
   },
   forestC: {
     name: "MASSIVE TREE",
     dir: { east: "forestA", extra: [{ action: "enter", loc: "forestD" }] },
     cipher: true,
+    check: 'uzvekxr',
     text: "Nzy cgqt es a eehdmvw xgpi if xwp jojihe, wo tmv elal cdf gaf'x hpi tzi izt ox mi.  Helcmcr ergyco xhw qpdwini icync, cdf rolmrp e seeaw hogvllc, bsvtwc lsvvp ingyvs xo kujpizw xwcsuyl.  Pcsufh isi dgsghey svt ppatsglxe ueggmnyw sptiuxxyk szmed sn llt hetwv, pyh bavsd jlqmcr svwvwped.  Llt deidsgd ephipc xo ti rppetvpemny, talcifk bfwiu axel tzixc waaph qyld su hmnv."
   },
   forestD: {
     name: "TREE HOUSE",
     dir: { extra: [{ action: "exit", loc: "forestC" }] },
+    items: ['rf'],
     cipher: true,
+    check: 'uzvekxs',
     text: "Tyxejmcr xhw xgpi, ygy utrd qsjcwedj xy e smvecmsarvwc shertsuk egpe.  Tzi llplk egp tauoto aill rzpojjjw jlmxtd env wicmnyis trslvjxinlw.  Isi psmceid xpdzv ik e htkhl xd mihgps, oipagitrg s ppvi waxw hevww pyh ratewis llpe pogo atoe lltj gomps xsvw ei lry esbprt.  Ar isi cwripv ik e slvk, kxdyi pwhtdxad, wtpqifk iz viki ja sul su ele oeipv.  Of xwp wivi dq xhw ttoislea tw a hppbye llpe veshh:\\y\\rA TMGO SF LLT DIA, OMIS AIFKH LW WAHT LW TZI HVC.\\nS VDZWT, GRAJ ECUIHDMBDI QJ TLSCXYK TZI HLGRWH XYWTJYBPRT.\\fMI'D GODSG, DS BJMAWMAFX, XE'W FGVB DS MSVKPPOMW."
   },
   templeA: {
     name: "TEMPLE ENTRANCE",
+    dir: { south: "forestA", extra: [{ action: "enter", loc: "templeB" }] },
+    cipher: true,
+    check: 'kipuwyt',
+    text: "Klh ypgipv vlxpm hyk si ysy eebi, dqmumvfwv xeumyvw gjnikekmql ebx gfvqjcm.  Mlv alsrm hj klh fwvtxisvx llx wgvhfo qbhv, eqi ebx lvegi llx xlvqjo nharvgx ebx wbc.  Wmp ygxzvh xelngkyuj tm feui rk dghskl, zmtnx qrveqp qbxy hdwv, iuwzhlfy nbpvw onycgk klh joaxw.  Rprsr qbxy xkj eyftci, d blfdarc kfd lbwvr rze iy xyi ofvy, tpcsznya rsl xr fnwxwj xkj phmvrrfj."
+  },
+  templeB: {
+    name: "TEMPLE INTERIOR",
     dir: { south: "forestB" },
     cipher: true,
-    text: "You enter the temple"
+    check: 'kipuwyu',
+    text: "TODO"
   },
 }

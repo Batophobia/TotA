@@ -3,10 +3,10 @@
     <h2 id="locName">{{ loc.name }}</h2>
     <div id="locArt">{{ loc.art }}</div>
     <div id="locText">{{ loc.text }}</div>
-    <div v-if="loc.dir.extra" id="extraButtons">
+    <div v-if="extra" id="extraButtons">
       <button
         :key="l.action"
-        v-for="l in loc.dir.extra"
+        v-for="l in extra"
         class="extraBtn"
         @click="moveExtra(l.loc)"
       >
@@ -34,7 +34,14 @@ export default {
     return { txtKey: "" };
   },
   computed: {
-    ...mapState(["loc"]),
+    ...mapState(["loc", "items"]),
+    extra: function () {
+      if (this.loc.dir.extra)
+        return this.loc.dir.extra.filter(
+          (e) => e.item == undefined || this.items.indexOf(e.item) >= 0
+        );
+      return null;
+    },
   },
   methods: {
     ...mapActions(["setLoc"]),

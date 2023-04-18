@@ -8,7 +8,8 @@ import locations from './data/locations'
 export default new Vuex.Store({
   state: {
     curTab: "new",
-    loc: { name: '', art: '', text: '', dir: {}, cipher: false },
+    loc: { name: '', art: '', text: '', dir: {}, cipher: undefined, check: undefined },
+    items: [],
     key: "",
     messages: []
   },
@@ -23,8 +24,12 @@ export default new Vuex.Store({
       var key = locKey.key;
       // Simple deep copy instead of reference
       var tmpLoc = JSON.parse(JSON.stringify(locations[loc]));
-      if (tmpLoc.cipher)
+      if (tmpLoc.cipher) {
         tmpLoc.text = vigenere(tmpLoc.text, key);
+        console.log({ loc, v: vigenere(tmpLoc.check, key), i: tmpLoc.items })
+        if (loc.toLowerCase() == vigenere(tmpLoc.check, key))
+          state.items = state.items.concat(tmpLoc.items);
+      }
       state.loc = tmpLoc;
     }
   },
