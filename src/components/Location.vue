@@ -1,7 +1,9 @@
 <template>
   <div class="app-body app-loc">
     <h2 id="locName">{{ loc.name }}</h2>
-    <div id="locArt">{{ loc.art }}</div>
+    <div id="locArt">
+      <pre>{{ loc.art }}</pre>
+    </div>
     <div id="locText">{{ loc.text }}</div>
     <div v-if="extra" id="extraButtons">
       <button
@@ -71,6 +73,13 @@ export default {
 <style>
 #locText {
   white-space: pre-wrap;
+}
+#locArt {
+  text-align: center;
+}
+#locArt pre {
+  text-align: left;
+  font-family: monospace;
 }
 
 #dirButtons {

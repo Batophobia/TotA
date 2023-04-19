@@ -2,11 +2,40 @@ export default {
   start: {
     name: "LANDING SITE",
     dir: { north: "forestA", east: "beachB", west: "beachD" },
+    art: String.raw`
+      
+     /\/\/\/\/\/\    /\/\    /\/\  /\/\/\    /\/\    /\/\ /\/\/\/\    /\/\    /\/\  /\/\/\    /\/\ 
+    /__\/\/_/ /__\__/\_\/\__/\_\/\/_/ /__\__/\_\/\__/\_\/\_/_/ /__\__/\_\/\__/\_\/\/_/ /__\__/\_\/\
+-._,-;-._,-;-,_.-;-._,-;-._.-;-._,-;-._,-;-,_.-;-._,-;-._,-;-,_.-;-._,-;-,_.-;-,_.-;-,_.-;-,_.-;-,_.-;-,_
+.-^-._.-^-.__.-^-._.-^-.__.-^-._.-^-.__.-^-._.-^-.__.-^-._.-^-.__.-^-._.-^-.__.-^-._.-^-.__.-^-._.-^-.__.
+         ~
+                                                                         ~
+                                              ~
+                                                                                                      ~
+                     ~
+                                                               ~
+    `,
     text: "Once on shore, you are greeted by the warm sun and sound of waves crashing against the rocky shore.  You open your eyes and look around. The beach is deserted, save for a few seagulls flying overhead.  To the East, you can see a lighthouse, to the North there is the edge of the forest, and to the West there appears to be some debris on the beach."
   },
   beachB: {
     name: "OLD LIGHTHOUSE",
     dir: { west: "start", extra: [{ action: "climb", loc: "beachC" }] },
+    art: String.raw`
+                                                   .-^-.
+                                                  /_/_\_\
+                                                 ' |[=]| '
+                                                   |_|_|
+                                                   | | |
+                                                   | | |
+                                                   | | |
+                                                   |_|_|
+                                                   | | |
+                                                   | | |
+                                                   | | |
+                                                   | | |
+                                                   |_|_|
+                                                  / | | \
+    `,
     text: "The lighthouse is a tall, white structure with a red roof, the sound of the waves crashing against the rocks below.  Next to the door, you notice a keypad awaiting a 3-letter code to open the door."
   },
   beachC: {
@@ -19,6 +48,20 @@ export default {
   beachD: {
     name: "SHIPWRECK",
     dir: { east: "start" },
+    art: String.raw`
+                            /\
+                           /  \
+                          /   |   /|                                           __
+                         /    \__/ |                                          /  |
+                        /          |            /\                      _____/   \
+                       /\__        |           /  \_                   /         /
+                      /    \      _/          /     \__               /         /
+                     /__________|/           /_________|_            /__________|
+                      |  _  []  |_            | [ ] [] _ |           |\ =    o  |
+  --._________________|_[_]______|   _________|/   \  ( )|___________|_\__()___/|_________________.
+     \   ,+#=.                    \ /                       #      /         $             T     /
+      \.,|    \..,.,.,.,,.,.,..,.,.,M,,,.,.,.,..,.,.,,,.,.,.,...,.,%,...,.,.,.,,,..,.,..,.,|,,.,/
+    `,
     text: "As you approach the large, dark shape, half-buried in the sand, yo recognize it as an old ship that crashed ashore.  It's clear that it's been there for a long time, the wood is weathered and bleached by the sun and the sails torn and tattered.  You examine the wreckage and notice there is something carved into the wood: ITA"
   },
   forestA: {
@@ -57,9 +100,45 @@ export default {
   },
   templeB: {
     name: "TEMPLE INTERIOR",
-    dir: { south: "forestB" },
+    dir: { north: "templeX", east: "templeC", west: "templeX" },
     cipher: true,
     check: 'kipuwyu',
-    text: "TODO"
+    text: "Psx jynxv zrwt l ftvxi, fncwnprv fmlguii, xkj nybpzrj mtaa essyj jinv yidi oyvsiewjo qbxy mqyccveki ffcpbrxw.  Btf uki kvduayw me xkj eyftci, wmp xhsi wofxgxh jlxy myameh btf.  Cg xyi fjynxv fj wmp lhsd mv f wukkv krqo uefrxutdm lxrxxj, tnl fven tayg ej mi ne'm lmeklsr.  Wtvmig nynh xyi efdy hj klh xeumyv mv f hukrzrj:\\s\\yYMIIRDQWS PEEHHWTHZ RFQDI"
+  },
+  templeC: {
+    name: "TEMPLE INTERIOR?",
+    dir: { north: "templeX", east: "templeX", west: "templeD" },
+    cipher: true,
+    check: 'kipuwyv',
+    text: "Psx jynxv zrwt l ftvxi, fncwnprv fmlguii, xkj nybpzrj mtaa essyj jinv yidi oyvsiewjo qbxy mqyccveki ffcpbrxw...  Zftn, pi niuj uolx yiuj.  Ebx iexufywx mj wwnwf vpfwhi fj, tru xkj nygxvv rk ebx vfsp xecep yev f wukkv krqo uefrxutdm lxrxxj.  Nukzvh lsei mlv fdxp iy xyi vylnni zw wmp mtqv adwycgk:\\e\\rHYPLGECPB BLHWIIMQL YIFEU"
+  },
+  templeD: {
+    name: "TEMPLE INTERIOR?",
+    dir: { north: "templeE", east: "templeX", west: "templeX" },
+    cipher: true,
+    check: 'kipuwyw',
+    text: "Psx jynxv zrwt l ftvxi, fncwnprv fmlguii, xkj nybpzrj mtaa essyj jinv yidi oyvsiewjo qbxy mqyccveki ffcpbrxw...  Zftn, pi niuj uolx yiuj.  Ebx iexufywx mj wwnwf vpfwhi fj, tru xkj nygxvv rk ebx vfsp xecep yev f wukkv krqo uefrxutdm lxrxxj.  Nukzvh lsei mlv fdxp iy xyi vylnni zw wmp mtqv adwycgk:\\e\\rHYPLGECPB BLHWIIMQL YIFEU"
+  },
+  templeE: {
+    name: "TEMPLE INTERIOR?",
+    dir: { north: "templeX", east: "templeX", west: "templeX", extra: [{ action: "feed", loc: "templeF" }] },
+    cipher: true,
+    check: 'kipuwyx',
+    text: "Psx jynxv zrwt l ftvxi, fncwnprv fmlguii, xkj nybpzrj mtaa essyj jinv yidi oyvsiewjo qbxy mqyccveki ffcpbrxw...  Zftn, pi niuj uolx yiuj.  Ebx iexufywx mj wwnwf vpfwhi fj, tru xkj nygxvv rk ebx vfsp xecep yev f wukkv krqo uefrxutdm lxrxxj.  Nukzvh lsei mlv fdxp iy xyi vylnni zw wmp mtqv adwycgk:\\e\\rWMP UEFRXUTDM AYEKHWD"
+  },
+  templeF: {
+    name: "TEMPLE INTERIOR",
+    dir: {},
+    items: ['ai'],
+    cipher: true,
+    check: 'kipuwyy',
+    text: "Klh xeumyv fhlthl xf vlxp oi mexr ysy tmi, ev nq zeczrj yz nai yidaphl.  Fvrhfeb mlv wwfeox pziv ysy lqrpo rlftgymwj lfuekvrxd cwsc.  Ev dzo kikvljgy mlv mgtw, nai usrwd wesji dso nai vbly cyhtvrv.  Hzhzvrxxqlnbsew rs niftciwnya rslv digygxlvh."
+  },
+  templeX: {
+    name: "TEMPLE INTERIOR?",
+    dir: { north: "templeX", east: "templeC", west: "templeX" },
+    cipher: true,
+    check: 'kipuwyq',
+    text: "Psx jynxv zrwt l ftvxi, fncwnprv fmlguii, xkj nybpzrj mtaa essyj jinv yidi oyvsiewjo qbxy mqyccveki ffcpbrxw...  Zftn, pi niuj uolx yiuj.  Ebx iexufywx mj wwnwf vpfwhi fj, tru xkj nygxvv rk ebx vfsp xecep yev f wukkv krqo uefrxutdm lxrxxj.  Nukzvh lsei mlv fdxp iy xyi vylnni zw wmp mtqv adwycgk:\\e\\rHYPLGECPB BLHWIIMQL YIFEU"
   },
 }
