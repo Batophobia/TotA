@@ -26,7 +26,6 @@ export default new Vuex.Store({
       var tmpLoc = JSON.parse(JSON.stringify(locations[loc]));
       if (tmpLoc.cipher) {
         tmpLoc.text = vigenere(tmpLoc.text, key);
-        console.log({ loc, v: vigenere(tmpLoc.check, key), i: tmpLoc.items })
         if (loc.toLowerCase() == vigenere(tmpLoc.check, key))
           state.items = state.items.concat(tmpLoc.items);
       }
