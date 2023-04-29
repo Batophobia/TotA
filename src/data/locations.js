@@ -41,6 +41,23 @@ export default {
   beachC: {
     name: "LANTERN ROOM",
     dir: { extra: [{ action: "descend", loc: "beachB" }] },
+    art: String.raw`
+                                              _______
+                                          ___/       \___
+                                     ____/               \____
+                                    /    |               |    \
+                                   /|    |      ___      |    |\
+                                    |    |    _/   \_    |    |
+                                    |    |   |       |   |    |
+                                    |    |   |  .*.  |   |    |
+                                    |    |   |  |_|  |   |    |
+                                    |    |   |___|___|   |    |
+                                    |    |       |       |    |
+                                    |    |      _|_      |    |
+                                    |    |  ___/   \___  |    |
+                                    |____|_/           \_|____|
+                                          /_____________\ 
+    `,
     cipher: true,
     check: 'jxakac',
     text: "Nkou mhm mox hf bae tbgpmhwnsm, roc aadx a jxacminnl dbee hf bae wveig. Ywn cig smx fwk mqeea bn moezr dqkekmiwg.  Ywn nwmikx tpx lifp ql spttbxrmw.  Abmakael mo wge wy tpx wqgdwps, ghu nbnl t nwme baab keiws:\\v\\gTPX LQZHB YRWF TPBS PHUAX WIL MG LOTX FZBEVW IV MHM EOVZ, DIKK VBGPMS.\\vGOE MHIM IBL KMR FMTTCKE QL GWGE, Q TM TXFB PIBA JCLT BAE ETVML.\\nBAE AHUVW ON MHMF CWGSBTNBEY KKAAAIVZ IV MHM WAZDNMLS QL MIWDMGIVZ.\\nQY YWN FQGD BAIA GOBX, PTXAAX KVHW BAAB B NMOEZ FEIGT NHR BAIA MO PTPXXN."
@@ -67,11 +84,33 @@ export default {
   forestA: {
     name: "EDGE OF THE FOREST",
     dir: { south: "start", north: "forestB", west: "forestC" },
+    art: String.raw`
+         /\    /\    /\    /\    /\    /\    /\    /\    /\    /\    /\  /\    /\    /\     /\       
+        //\\  //\\  //\\  //\\  //\\  //\\  //\\  //\\  //\\  //\\  //\\//\\  //\\  //\\   //\\      
+       ///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\/\\\///\\\///\\\ ///\\\     
+       ///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\/\\\///\\\///\\\////\\\\    
+       ///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\/\\\///\\\///\\\////\\\\\   
+      ////\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\/\\\///\\\///\\\////\\\\\\  
+     /////\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\///\\\/\\\///\\\///\\\////\\\\\\\ 
+         ||    ||    ||    ||    ||    ||    ||    ||    ||    ||    ||  ||    ||    ||     ||       
+         ||    ||    ||    ||    ||    ||    ||    ||    ||    ||    ||  ||    ||    ||     ||  
+    `,
     text: "As you come to the edge of the forest, you are greeted by the sound of birdsong and the rustle of leaves in the wind.  The forest is dense and dark, and you cannot see very far in any direction.  As you are examining the area, you notice 4 piles of rocks around a tree with what looks like a compass caved into it.  The number of rocks in each pile are: 11, 4, 10, 6"
   },
   forestB: {
     name: "SPARKLING LAKE",
     dir: { south: "forestA", extra: [{ action: "play", loc: "templeA", item: "rf" }] },
+    art: String.raw`
+      /\  /\                                                                               /\  /\
+      /\\ /\\                     _________/\________  ____                               //\ //\
+      /\\\/\\\                   /                   \/    \____                         ///\///\
+      /\\\/\\\                  |     ~                         \____                    ///\///\
+      /\\\/\\\                 _/                 ~               ~  \                   ///\///\
+      /\\\/\\\\               /                                       \                 ////\///\
+      /\\\/\\\\\             /    ~           ___.-.___       ~        \               /////\///\
+      ||  ||                 \____       ____/         \____     ______/                   ||  ||
+      ||  ||                      \_____/                   \___/                          ||  ||
+    `,
     cipher: true,
     check: 'uzvekxq',
     text: "Llpkarv elrgyvs xhw jdcisl, cdf goei iz e cdipcmny.  Mc ele emsope gj isi cdipcmny mh l pajkt wekw, xwp aalig l fesyitjud fafi cgpdc.  Es qsj helc eazre llt dlojiatre, qsj ystagt dsmwxwtrg kxxnoifk dfx ox xwp wafh.  Stkgarv tx uh, mi ltpwegd xo ti p mvauiapx msht zj a vegv qelea, dqogxw lrd usdw xo llt esuul.  Teghwh pcsufh isi mwxpw erw ppcke tmgow afh bfwiu rdeis.  Ar isi cwripv ik e hxeld, vdfrd kxdyi, shegvpifk qcmgzx gph if xwp wufpxrlt."
@@ -79,6 +118,20 @@ export default {
   forestC: {
     name: "MASSIVE TREE",
     dir: { east: "forestA", extra: [{ action: "enter", loc: "forestD" }] },
+    art: String.raw`
+           {       {              {                    }         {    {   }               {     
+           }        }       }       }           {           }              {          {   }     
+           {     }        {               }           {         }                {        {     
+           }                         }           {           {                         }  }     
+           {                    }      {            {    }     {        {   {             {     
+           }           {                     {                                }    {      }     
+           {      {           {       }                }      }                       }   {     
+           }               {                     }       }     }             {            }     
+           {             }         }               }    {    {       }  }                 {     
+        ___|                                           }        {           }         }   |___  
+       /      (    )    )       (      )       )           (      )                   )       \ 
+      /      (      )    )     (        )       )         (        )                   )       \
+    `,
     cipher: true,
     check: 'uzvekxr',
     text: "Nzy cgqt es a eehdmvw xgpi if xwp jojihe, wo tmv elal cdf gaf'x hpi tzi izt ox mi.  Helcmcr ergyco xhw qpdwini icync, cdf rolmrp e seeaw hogvllc, bsvtwc lsvvp ingyvs xo kujpizw xwcsuyl.  Pcsufh isi dgsghey svt ppatsglxe ueggmnyw sptiuxxyk szmed sn llt hetwv, pyh bavsd jlqmcr svwvwped.  Llt deidsgd ephipc xo ti rppetvpemny, talcifk bfwiu axel tzixc waaph qyld su hmnv."
@@ -86,6 +139,20 @@ export default {
   forestD: {
     name: "TREE HOUSE",
     dir: { extra: [{ action: "exit", loc: "forestC" }] },
+    art: String.raw`
+      ________________________________________________________________________________________     
+      }                        }                   {                                      {   }     
+      {        }                                                    }                         {     
+      }                                 }                                                     }     
+      {                 {                                                       {             {     
+      }                                                                                {      }     
+      {                                                    }                                  {     
+      }   }                   {                  |                                            }     
+      {              }                        __/_\__                       }                 {     
+      }                                       | +-+ |               {                     }   }
+      {                                       | +-+ |                                         {
+      }_______________________________________|_____|_________________________________________}
+    `,
     items: ['rf'],
     cipher: true,
     check: 'uzvekxs',
@@ -94,6 +161,18 @@ export default {
   templeA: {
     name: "TEMPLE ENTRANCE",
     dir: { south: "forestA", extra: [{ action: "enter", loc: "templeB" }] },
+    art: String.raw`
+         ~            ___________________________________________________            ~
+                     |              =                =                   |          
+                  ~  |   =                =                    =         |    ~      
+                     |                    _.-'"^"'-._                  = |          
+                     |       =           |           |   =               |          
+                     |                 = | /       \ |              =    |         ~ 
+          ~          |___________________|/         \|___________________|          
+                  ~                      O o O o O o O      ~               ~
+                                  ~     __._____,____._             ~
+       ________.________,________._____/               \____.___________,____________.__
+    `,
     cipher: true,
     check: 'kipuwyt',
     text: "Klh ypgipv vlxpm hyk si ysy eebi, dqmumvfwv xeumyvw gjnikekmql ebx gfvqjcm.  Mlv alsrm hj klh fwvtxisvx llx wgvhfo qbhv, eqi ebx lvegi llx xlvqjo nharvgx ebx wbc.  Wmp ygxzvh xelngkyuj tm feui rk dghskl, zmtnx qrveqp qbxy hdwv, iuwzhlfy nbpvw onycgk klh joaxw.  Rprsr qbxy xkj eyftci, d blfdarc kfd lbwvr rze iy xyi ofvy, tpcsznya rsl xr fnwxwj xkj phmvrrfj."
@@ -101,6 +180,18 @@ export default {
   templeB: {
     name: "TEMPLE INTERIOR",
     dir: { north: "templeX", east: "templeC", west: "templeX" },
+    art: String.raw`
+        _______________________________________________________________________________ 
+       |      |       =                       _                    =          |  =     |
+       |   =  |______________________________| |______________________________|        | 
+       |      /                  =                                             \       |
+       |   /|/                             ___^___              =               \|\  = |
+       |  | |            =                /  ( ), \                              | |   | 
+       |  |                                 _/_|_                                  |   | 
+       |  /   =                             | # |                         =         \  | 
+       | /                           =     /_____\          =                        \ | 
+       |/_____________________________________________________________________________\|
+    `,
     cipher: true,
     check: 'kipuwyu',
     text: "Psx jynxv zrwt l ftvxi, fncwnprv fmlguii, xkj nybpzrj mtaa essyj jinv yidi oyvsiewjo qbxy mqyccveki ffcpbrxw.  Btf uki kvduayw me xkj eyftci, wmp xhsi wofxgxh jlxy myameh btf.  Cg xyi fjynxv fj wmp lhsd mv f wukkv krqo uefrxutdm lxrxxj, tnl fven tayg ej mi ne'm lmeklsr.  Wtvmig nynh xyi efdy hj klh xeumyv mv f hukrzrj:\\s\\yYMIIRDQWS PEEHHWTHZ RFQDI"
@@ -108,12 +199,36 @@ export default {
   templeC: {
     name: "TEMPLE INTERIOR?",
     dir: { north: "templeX", east: "templeX", west: "templeD" },
+    art: String.raw`
+        _______________________________________________________________________________ 
+       |      |       =                       _                    =          |  =     |
+       |   =  |______________________________| |______________________________|        | 
+       |      /                  =                                             \       |
+       |   /|/                             ___^___              =               \|\  = |
+       |  | |            =                /  ( ), \                              | |   | 
+       |  |                                 _/_|_                                  |   | 
+       |  /   =                             | # |                         =         \  | 
+       | /                           =     /_____\          =                        \ | 
+       |/_____________________________________________________________________________\|
+    `,
     cipher: true,
     check: 'kipuwyv',
     text: "Psx jynxv zrwt l ftvxi, fncwnprv fmlguii, xkj nybpzrj mtaa essyj jinv yidi oyvsiewjo qbxy mqyccveki ffcpbrxw...  Zftn, pi niuj uolx yiuj.  Ebx iexufywx mj wwnwf vpfwhi fj, tru xkj nygxvv rk ebx vfsp xecep yev f wukkv krqo uefrxutdm lxrxxj.  Nukzvh lsei mlv fdxp iy xyi vylnni zw wmp mtqv adwycgk:\\e\\rHYPLGECPB BLHWIIMQL YIFEU"
   },
   templeD: {
     name: "TEMPLE INTERIOR?",
+    art: String.raw`
+        _______________________________________________________________________________ 
+       |      |       =                       _                    =          |  =     |
+       |   =  |______________________________| |______________________________|        | 
+       |      /                  =                                             \       |
+       |   /|/                             ___^___              =               \|\  = |
+       |  | |            =                /  ( ), \                              | |   | 
+       |  |                                 _/_|_                                  |   | 
+       |  /   =                             | # |                         =         \  | 
+       | /                           =     /_____\          =                        \ | 
+       |/_____________________________________________________________________________\|
+    `,
     dir: { north: "templeE", east: "templeX", west: "templeX" },
     cipher: true,
     check: 'kipuwyw',
@@ -122,6 +237,18 @@ export default {
   templeE: {
     name: "TEMPLE INTERIOR?",
     dir: { north: "templeX", east: "templeX", west: "templeX", extra: [{ action: "feed", loc: "templeF" }] },
+    art: String.raw`
+        _______________________________________________________________________________ 
+       |      |       =                       _                    =          |  =     |
+       |   =  |______________________________| |______________________________|        | 
+       |      /                  =                                             \       |
+       |   /|/                             ___^___              =               \|\  = |
+       |  | |            =                /  ( ), \                              | |   | 
+       |  |                                 _/_|_                                  |   | 
+       |  /   =                             | # |                         =         \  | 
+       | /                           =     /_____\          =                        \ | 
+       |/_____________________________________________________________________________\|
+    `,
     cipher: true,
     check: 'kipuwyx',
     text: "Psx jynxv zrwt l ftvxi, fncwnprv fmlguii, xkj nybpzrj mtaa essyj jinv yidi oyvsiewjo qbxy mqyccveki ffcpbrxw...  Zftn, pi niuj uolx yiuj.  Ebx iexufywx mj wwnwf vpfwhi fj, tru xkj nygxvv rk ebx vfsp xecep yev f wukkv krqo uefrxutdm lxrxxj.  Nukzvh lsei mlv fdxp iy xyi vylnni zw wmp mtqv adwycgk:\\e\\rWMP UEFRXUTDM AYEKHWD"
@@ -129,6 +256,18 @@ export default {
   templeF: {
     name: "TEMPLE INTERIOR",
     dir: {},
+    art: String.raw`
+        _______________________________________________________________________________ 
+       |      |       =                    ___^___                 =          |  =     |
+       |   =  |___________________________/  ( ), \___________________________|        | 
+       |      /                  =          _/_|_                              \       |
+       |   /|/                              | # |               =               \|\  = |
+       |  |#|            =                 /_____\                               |#|   | 
+       |  |#                               |  _  |                                #|   | 
+       |  /   =                            | |_| |                        =         \  | 
+       | /                           =    /_______\         =                        \ | 
+       |/________________________________           __________________________________\|
+    `,
     items: ['ai'],
     cipher: true,
     check: 'kipuwyy',
@@ -137,6 +276,18 @@ export default {
   templeX: {
     name: "TEMPLE INTERIOR?",
     dir: { north: "templeX", east: "templeC", west: "templeX" },
+    art: String.raw`
+        _______________________________________________________________________________ 
+       |      |       =                       _                    =          |  =     |
+       |   =  |______________________________| |______________________________|        | 
+       |      /                  =                                             \       |
+       |   /|/                             ___^___              =               \|\  = |
+       |  | |            =                /  ( ), \                              | |   | 
+       |  |                                 _/_|_                                  |   | 
+       |  /   =                             | # |                         =         \  | 
+       | /                           =     /_____\          =                        \ | 
+       |/_____________________________________________________________________________\|
+    `,
     cipher: true,
     check: 'kipuwyq',
     text: "Psx jynxv zrwt l ftvxi, fncwnprv fmlguii, xkj nybpzrj mtaa essyj jinv yidi oyvsiewjo qbxy mqyccveki ffcpbrxw...  Zftn, pi niuj uolx yiuj.  Ebx iexufywx mj wwnwf vpfwhi fj, tru xkj nygxvv rk ebx vfsp xecep yev f wukkv krqo uefrxutdm lxrxxj.  Nukzvh lsei mlv fdxp iy xyi vylnni zw wmp mtqv adwycgk:\\e\\rHYPLGECPB BLHWIIMQL YIFEU"
